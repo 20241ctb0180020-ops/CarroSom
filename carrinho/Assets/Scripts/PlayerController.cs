@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,21 +9,24 @@ public class PlayerController : MonoBehaviour
     private float turnSpeed = 45f;
     private float horizontalInput;
     private float verticalInput;
+    InputAction moveAction;
+    InputAction rotateAction;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        moveAction = InputSystem.actions.FindAction("Move");
+        rotateAction = InputSystem.actions.FindAction("Rotate");
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = rotateAction.ReadValue<Vector2>().x;
+        verticalInput = moveAction.ReadValue<Vector2>().y;
         if (verticalInput > 0)
         {
-            // Move o veículo para frente a partir do Input vertical
+            // Move o veï¿½culo para frente a partir do Input vertical
             transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
         }
         // Rotaciona o carro a partir do Input horizontal
