@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d4dc122c-e046-41b8-bf56-59e742446b44}">
+		<property name="assetPath">
+			<value>car_loop.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>12.864000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{376c49f0-e6d5-499d-8f90-c248e5f356be}</destination>
+		</relationship>
+	</object>
+</objects>
